@@ -1,0 +1,8 @@
+# Ignore build folders
+/out/
+.idea/
+*.iml
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
