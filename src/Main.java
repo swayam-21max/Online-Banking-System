@@ -88,7 +88,10 @@ public class Main {
                     bankService.showAccountOwner(accId);
                     break;
                 case 12:
-                    bankService.deleteAccount();
+                    // Delete Account: Ask for account ID
+                    System.out.print("Enter Account ID to delete: ");
+                    String accountIdToDelete = sc.nextLine();
+                    bankService.deleteAccount(accountIdToDelete);
                     break;
 
                 case 13:
