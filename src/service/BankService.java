@@ -228,8 +228,8 @@ public class BankService {
         // Remove the account from the accounts map
         accounts.remove(accountId);
 
-        // Logout after deletion
-        logout();
+        // Remove the user from the users map
+        users.remove(userId);
 
         System.out.println("Account deleted successfully.");
     }
