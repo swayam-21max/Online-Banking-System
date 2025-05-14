@@ -92,15 +92,6 @@ public class Main {
                     System.out.println("Thank you for using the Online Banking System.");
                     exit = true;
                     break;
-                case 11:
-                    bankService.showAllAccountHolders();
-                    break;
-                case 12:
-                    System.out.print("Enter Account ID: ");
-                    String accId = sc.nextLine();
-                    bankService.showAccountOwner(accId);
-                    break;
-
                 default:
                     System.out.println("Invalid option. Try again.");
             }
