@@ -176,4 +176,23 @@ public class BankService {
         currentAccount = null;
         System.out.println("Logged out successfully.");
     }
+    // Show all account holders
+    public void showAllAccountHolders() {
+        if (accounts.isEmpty()) {
+            System.out.println("No accounts found.");
+            return;
+        }
+
+        System.out.println("===== List of Account Holders =====");
+        for (Account account : accounts.values()) {
+            String userId = account.getUserId();
+            User user = users.get(userId);
+            if (user != null) {
+                System.out.println("Name: " + user.getName() +
+                        ", Email: " + user.getEmail() +
+                        ", Account ID: " + account.getAccountId() +
+                        ", Balance: ₹" + account.getBalance());
+            }
+        }
+    }
 }
