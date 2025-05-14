@@ -220,12 +220,13 @@ public class BankService {
             return;
         }
 
-        // Remove account from the accounts map
-        accounts.remove(currentAccount.getAccountId());
-        // Remove user from the users map
-        users.remove(currentUser.getUserId());
-        // Remove login credentials
-        loginCredentials.remove(currentUser.getEmail());
+        // Get the account and its associated user
+        Account accountToDelete = accounts.get(accountId);
+        String userId = accountToDelete.getUserId();
+        User userToDelete = users.get(userId);
+
+        // Remove the account from the accounts map
+        accounts.remove(accountId);
 
         // Logout after deletion
         logout();
