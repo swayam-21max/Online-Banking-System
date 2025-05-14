@@ -212,9 +212,11 @@ public class BankService {
         System.out.println("Balance: ₹" + account.getBalance());
     }
     // Delete Account Method
-    public void deleteAccount() {
-        if (currentAccount == null) {
-            System.out.println("No active account. Please login and create an account first.");
+    // Delete Account by Account ID
+    public void deleteAccount(String accountId) {
+        // Check if the account exists in the accounts map
+        if (!accounts.containsKey(accountId)) {
+            System.out.println("Account not found.");
             return;
         }
 
