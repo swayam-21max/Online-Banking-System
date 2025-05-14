@@ -88,6 +88,7 @@ public class Main {
 
 
                 case 12:
+                    // Exit the program
                     System.out.println("Thank you for using the Online Banking System.");
                     exit = true;
                     break;
