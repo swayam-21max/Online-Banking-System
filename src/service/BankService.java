@@ -237,10 +237,11 @@ public class BankService {
         System.out.println("Account with ID: " + accountId + " and associated user have been deleted.");
     }
 
-    // Generate Bank Statement Method
-    public void generateBankStatement() {
-        if (currentAccount == null) {
-            System.out.println("No active account. Please login first.");
+    // Generate Bank Statement by Account ID
+    public void generateBankStatement(String accountId) {
+        // Check if the account exists in the accounts map
+        if (!accounts.containsKey(accountId)) {
+            System.out.println("Account not found.");
             return;
         }
 
