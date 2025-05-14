@@ -195,4 +195,27 @@ public class BankService {
             }
         }
     }
+
+    // Show account owner by account ID
+    public void showAccountOwner(String accountId) {
+        Account account = accounts.get(accountId);
+        if (account == null) {
+            System.out.println("Account not found.");
+            return;
+        }
+
+        User user = users.get(account.getUserId());
+        if (user == null) {
+            System.out.println("User not found for this account.");
+            return;
+        }
+
+        System.out.println("===== Account Owner Details =====");
+        System.out.println("Name: " + user.getName());
+        System.out.println("Email: " + user.getEmail());
+        System.out.println("User ID: " + user.getUserId());
+        System.out.println("Account ID: " + account.getAccountId());
+        System.out.println("Balance: ₹" + account.getBalance());
+    }
+
 }
