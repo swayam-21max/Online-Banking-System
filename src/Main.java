@@ -85,6 +85,11 @@ public class Main {
                 case 11:
                     bankService.showAllAccountHolders();
                     break;
+                case 12:
+                    System.out.print("Enter Account ID: ");
+                    String accId = sc.nextLine();
+                    bankService.showAccountOwner(accId);
+                    break;
 
                 default:
                     System.out.println("Invalid option. Try again.");
