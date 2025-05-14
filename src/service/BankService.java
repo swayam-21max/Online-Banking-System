@@ -231,7 +231,10 @@ public class BankService {
         // Remove the user from the users map
         users.remove(userId);
 
-        System.out.println("Account deleted successfully.");
+        // Remove the login credentials for the user
+        loginCredentials.remove(userToDelete.getEmail());
+
+        System.out.println("Account with ID: " + accountId + " and associated user have been deleted.");
     }
 
     // Generate Bank Statement Method
