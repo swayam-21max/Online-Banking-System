@@ -87,7 +87,14 @@ public class Main {
                     bankService.showAccountOwner(accId);
                     break;
                 case 12:
-                    // Exit the program
+                    bankService.deleteAccount();
+                    break;
+
+                case 13:
+                    bankService.generateBankStatement();
+                    break;
+
+                case 14:
                     System.out.println("Thank you for using the Online Banking System.");
                     exit = true;
                     break;
