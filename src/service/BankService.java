@@ -245,9 +245,9 @@ public class BankService {
         }
 
         System.out.println("\n========== Bank Statement ==========");
-        System.out.println("Account ID: " + currentAccount.getAccountId());
-        System.out.println("User ID: " + currentAccount.getUserId());
-        System.out.println("Current Balance: ₹" + currentAccount.getBalance());
+        System.out.println("Account ID: " + accountId);
+        System.out.println("User ID: " + account.getUserId());
+        System.out.println("Current Balance: ₹" + account.getBalance());
         System.out.println("\nTransaction History:");
 
         // Print each transaction in the history
