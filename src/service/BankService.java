@@ -244,6 +244,7 @@ public class BankService {
             return;
         }
 
+        // Display Bank Statement
         System.out.println("\n========== Bank Statement ==========");
         System.out.println("Account ID: " + accountId);
         System.out.println("User ID: " + account.getUserId());
