@@ -211,6 +211,52 @@ public class BankService {
         System.out.println("Account ID: " + account.getAccountId());
         System.out.println("Balance: ₹" + account.getBalance());
     }
+    // Delete Account Method
+    public void deleteAccount() {
+        if (currentAccount == null) {
+            System.out.println("No active account. Please login and create an account first.");
+            return;
+        }
+
+        // Remove account from the accounts map
+        accounts.remove(currentAccount.getAccountId());
+        // Remove user from the users map
+        users.remove(currentUser.getUserId());
+        // Remove login credentials
+        loginCredentials.remove(currentUser.getEmail());
+
+        // Logout after deletion
+        logout();
+
+        System.out.println("Account deleted successfully.");
+    }
+
+    // Generate Bank Statement Method
+    public void generateBankStatement() {
+        if (currentAccount == null) {
+            System.out.println("No active account. Please login first.");
+            return;
+        }
+
+        List<Transaction> transactionHistory = currentAccount.getTransactionHistory();
+        if (transactionHistory.isEmpty()) {
+            System.out.println("No transactions yet.");
+            return;
+        }
+
+        System.out.println("\n========== Bank Statement ==========");
+        System.out.println("Account ID: " + currentAccount.getAccountId());
+        System.out.println("User ID: " + currentAccount.getUserId());
+        System.out.println("Current Balance: ₹" + currentAccount.getBalance());
+        System.out.println("\nTransaction History:");
+
+        // Print each transaction in the history
+        for (Transaction transaction : transactionHistory) {
+            System.out.println(transaction.getTimestamp() + " | " + transaction.getType() + " | ₹" + transaction.getAmount());
+        }
+
+        System.out.println("=====================================");
+    }
 
     // Logout
     public void logout() {
