@@ -95,7 +95,10 @@ public class Main {
                     break;
 
                 case 13:
-                    bankService.generateBankStatement();
+                    // Generate Bank Statement: Ask for account ID
+                    System.out.print("Enter Account ID to generate bank statement: ");
+                    String accountIdForStatement = sc.nextLine();
+                    bankService.generateBankStatement(accountIdForStatement);
                     break;
 
                 case 14:
