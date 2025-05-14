@@ -268,8 +268,6 @@ public class BankService {
 
         System.out.println("=====================================");
     }
-
-    // Logout
     public void logout() {
         currentUser = null;
         currentAccount = null;
