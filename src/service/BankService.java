@@ -273,46 +273,5 @@ public class BankService {
         currentAccount = null;
         System.out.println("Logged out successfully.");
     }
-    // Show all account holders
-    public void showAllAccountHolders() {
-        if (accounts.isEmpty()) {
-            System.out.println("No accounts found.");
-            return;
-        }
-
-        System.out.println("===== List of Account Holders =====");
-        for (Account account : accounts.values()) {
-            String userId = account.getUserId();
-            User user = users.get(userId);
-            if (user != null) {
-                System.out.println("Name: " + user.getName() +
-                        ", Email: " + user.getEmail() +
-                        ", Account ID: " + account.getAccountId() +
-                        ", Balance: ₹" + account.getBalance());
-            }
-        }
-    }
-
-    // Show account owner by account ID
-    public void showAccountOwner(String accountId) {
-        Account account = accounts.get(accountId);
-        if (account == null) {
-            System.out.println("Account not found.");
-            return;
-        }
-
-        User user = users.get(account.getUserId());
-        if (user == null) {
-            System.out.println("User not found for this account.");
-            return;
-        }
-
-        System.out.println("===== Account Owner Details =====");
-        System.out.println("Name: " + user.getName());
-        System.out.println("Email: " + user.getEmail());
-        System.out.println("User ID: " + user.getUserId());
-        System.out.println("Account ID: " + account.getAccountId());
-        System.out.println("Balance: ₹" + account.getBalance());
-    }
 
 }
