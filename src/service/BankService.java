@@ -238,7 +238,10 @@ public class BankService {
             return;
         }
 
-        List<Transaction> transactionHistory = currentAccount.getTransactionHistory();
+        // Get the account details
+        Account account = accounts.get(accountId);
+        List<Transaction> transactionHistory = account.getTransactionHistory();
+
         if (transactionHistory.isEmpty()) {
             System.out.println("No transactions yet.");
             return;
